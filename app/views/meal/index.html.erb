@@ -1,0 +1,88 @@
+<%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+
+<%= form_with url: meals_path, method: :get, local: true, class: 'form-inline' do |form| %>
+<div class="form-group">
+    <%= form.label :date, "Filter by Date" %>
+    <%= form.date_field :date, class: 'form-control', value: params[:date] %>
+</div>
+<%= form.submit 'Filter', class: 'btn btn-secondary' %>
+<% end %>
+
+<%= form_with url: create_meal_path, method: :post, local: true do |form| %>
+<% if flash[:alert] %>
+<div class="alert alert-danger">
+    <%= flash[:alert] %>
+</div>
+<% end %>
+<div class="form-group">
+    <%= form.label :name, "Meal Name" %>
+    <%= form.text_field :name, class: 'form-control' %>
+</div>
+<div class="form-group">
+    <%= form.label :meal_type, "Meal Type" %>
+    <%= form.select :meal_type, options_for_select([['Breakfast', 0], ['Lunch', 1], ['Dinner', 2], ['Snack', 3]]), {}, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+    <%= form.label :date, "Date" %>
+    <%= form.date_field :date, value: date, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+    <%= form.label :carbs, "Carbohydrates (g)" %>
+    <%= form.number_field :carbs, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+    <%= form.label :protein, "Protein (g)" %>
+    <%= form.number_field :protein, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+    <%= form.label :fat, "Fat (g)" %>
+    <%= form.number_field :fat, class: 'form-control' %>
+</div>
+<div class="form-group">
+    <%= form.label :calories, "Calories" %>
+    <%= form.number_field :calories, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+    <%= form.submit 'Add Meal', class: 'btn btn-primary' %>
+</div>
+<% end %>
+
+<h2>Meals</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Carbs (g)</th>
+            <th>Protein (g)</th>
+            <th>Fat (g)</th>
+            <th>Calories</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% meals.each do |meal| %>
+        <tr>
+            <%= form_with url: meal_path(meal), method: :patch, local: true do |form| %>
+            <td><%= form.text_field :name, class: 'form-control', value: meal.name %> </td>
+            <td><%= form.select :meal_type, options_for_select([['Breakfast', 0], ['Lunch', 1], ['Dinner', 2], ['Snack', 3]], meal.meal_type), {}, class: 'form-control' %></td>
+            <td><%= form.number_field :carbs, class: 'form-control', value: meal.carbs %></td>
+            <td><%= form.number_field :protein, class: 'form-control', value: meal.protein %></td>
+            <td><%= form.number_field :fat, class: 'form-control', value: meal.fat %></td>
+            <td><%= form.number_field :calories, class: 'form-control', value: meal.calories %></td>
+            <td>
+                <%= form.submit 'Edit', class: 'btn btn-primary' %>
+            </td>
+            <% end %>
+            <td>
+                <%= button_to 'Delete', meal_path(meal), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

@@ -13,10 +13,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   authenticated :user do
-    root "application#index", as: :authenticated_root
+    root to: redirect('/meal'), as: :authenticated_root
+
+    resources :meal
   end
 
   unauthenticated do
     root to: redirect('/users/sign_in')
+
+    get '/meal', to: redirect('/users/sign_in')
   end
 end
