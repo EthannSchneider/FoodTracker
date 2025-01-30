@@ -8,6 +8,27 @@
 <% end %>
 <%= render "layouts/header" %>
 <div class="container">
+    <div class="daily-summary">
+        <h2>Daily Summary</h2>
+        <div class="daily-boxs">
+            <div class="daily-box daily-calories">
+                <h3>Calories</h3>
+                <p><%= current_user.calories_of_the_days(date) %></p>
+            </div>
+            <div class="daily-box daily-protein">
+                <h3>Protein</h3>
+                <p><%= current_user.protein_of_the_days(date) %> g</p>
+            </div>
+            <div class="daily-box daily-carbs">
+                <h3>Carbs</h3>
+                <p><%= current_user.carbs_of_the_days(date) %> g</p>
+            </div>
+            <div class="daily-box daily-fat">
+                <h3>Fat</h3>
+                <p><%= current_user.fat_of_the_days(date) %> g</p>
+            </div>
+        </div>
+    </div>
     <div class="title-container">
         <h2><%= date == Date.today ? 'Today\'s Meals' : "Meals of " + date %></h2>
         <button onclick="document.getElementById('add-meals').style.display = 'flex';" class="btn btn-success">Add Meals</button>

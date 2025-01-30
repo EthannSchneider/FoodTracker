@@ -32,6 +32,58 @@
     max-width: 1300px;
 }
 
+.daily-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 1300px;
+}
+
+.daily-boxs {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+
+.daily-box {
+    width: calc(25% - 10px);
+    height: 100px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.daily-box > p {
+    font-size: 16px;
+}
+
+.daily-box > h3 {
+    font-size: 14px;
+    color: gray;
+}
+
+.daily-calories {
+    background-color: rgba(188, 204, 255, 0.5);
+    color: rgb(0, 0, 179);
+}
+
+.daily-protein {
+    background-color: rgba(188, 255, 195, 0.5);
+    color: rgb(0, 179, 0);
+}
+
+.daily-fat {
+    background-color: rgba(255, 151, 151, 0.5);
+    color: rgb(201, 0, 0);
+}
+
+.daily-carbs {
+    background-color: rgba(251, 255, 167, 0.5);
+    color: rgb(141, 148, 0);
+}
+
 .meal {
     display: flex;
     width: calc(100% - 12px);
@@ -63,7 +115,7 @@
     margin: 0px;
 }
 
-.meal-buttons button {
+.meal-buttons > input {
     width: 80px;
 }
 
@@ -76,4 +128,29 @@
 .nt-input {
     width: 150px;
     margin: 0px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .daily-box > h3 {
+        color: gray;
+    }
+    .daily-calories {
+        background-color: rgba(188, 204, 255, 1);
+        color: rgb(0, 0, 161);
+    }
+    
+    .daily-protein {
+        background-color: rgba(188, 255, 195, 1);
+        color: rgb(0, 130, 0);
+    }
+    
+    .daily-fat {
+        background-color: rgba(255, 151, 151, 1);
+        color: rgb(175, 0, 0);
+    }
+    
+    .daily-carbs {
+        background-color: rgba(251, 255, 167, 1);
+        color: rgb(122, 129, 0);
+    }    
 }
