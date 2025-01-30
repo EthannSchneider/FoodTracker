@@ -112,6 +112,18 @@ html, body {
     border: 1px solid #dee2e6;
 }
 
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+input {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
     body {
