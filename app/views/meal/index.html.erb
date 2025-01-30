@@ -17,22 +17,26 @@
         <p>No meals available.</p>
         <% end %>
         <% meals.each do |meal| %>
-        <div class="meal">
-            <div class="meal-title">
-                <h3><%= meal.name %></h3>
-                <p><%= ["Breakfast", "Lunch", "Dinner", "Snack"][meal.meal_type] %></p>
+        <%= form_with url: meal_path(meal), method: :put, local: true, class: 'meal' do |f| %>
+        <div class="meal-title">
+            <h3><%= f.text_field :name, value: meal.name, class: 'form-control nt-input' %></h3>
+            <p><%= f.select :meal_type, options_for_select([['Breakfast', 0], ['Lunch', 1], ['Dinner', 2], ['Snack', 3]], meal.meal_type), {}, class: 'form-control nt-input' %></p>
+        </div>
+        <div class="meal-info-buttons">
+            <div class="meal-info">
+                <p><%= f.number_field :calories, value: meal.calories, class: 'form-control cpfc-input' %> calories</p>
+                <p>
+                    P: <%= f.number_field :protein, value: meal.protein, class: 'form-control cpfc-input' %>g |
+                    C: <%= f.number_field :carbs, value: meal.carbs, class: 'form-control cpfc-input' %>g |
+                    F: <%= f.number_field :fat, value: meal.fat, class: 'form-control cpfc-input' %>g
+                </p>
             </div>
-            <div class="meal-info-buttons">
-                <div class="meal-info">
-                    <p><%= meal.calories %> calories</p>
-                    <p>P: <%= meal.protein %>g | C: <%= meal.carbs %>g | F: <%= meal.fat %>g</p>
-                </div>
-                <div class="meal-buttons">
-                    <%= button_to 'Edit', edit_meal_path(meal), class: 'btn btn-primary' %>
-                    <%= button_to 'Delete', meal_path(meal), method: :delete, class: 'btn btn-danger'%>
-                </div>
+            <div class="meal-buttons">
+                <%= f.submit 'Edit', class: 'btn btn-primary' %>
+                <%= button_to 'Delete', meal_path(meal), method: :delete, class: 'btn btn-danger'%>
             </div>
         </div>
+        <% end %>
         <% end %>
     </div>
     <%= render 'meal/add_meals', date: date, create_meal_path: create_meal_path %>
