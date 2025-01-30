@@ -54,10 +54,10 @@
             </div>
             <div class="meal-buttons">
                 <%= f.submit 'Edit', class: 'btn btn-primary' %>
-                <%= button_to 'Delete', meal_path(meal), method: :delete, class: 'btn btn-danger'%>
+                <% end %>
+                <%= button_to 'Delete', meal_path(meal), method: :delete, class: 'btn btn-danger' %>
             </div>
         </div>
-        <% end %>
         <% end %>
     </div>
     <%= render 'meal/add_meals', date: date, create_meal_path: create_meal_path %>
