@@ -11,8 +11,8 @@
         </div>
 
         <div class="header-links">
-            <%= link_to 'Meals', "/meal", class: 'header-link' %>
-            <%= link_to 'Body Measurements', "/body_measurement", class: 'header-link' %>
+            <%= link_to 'Meals', "/meal#{'?date=' + params[:date] if params[:date].present?}", class: 'header-link' %>
+            <%= link_to 'Body Measurements', "/body_measurement#{'?date=' + params[:date] if params[:date].present?}", class: 'header-link' %>
         </div>
 
         <div class="header-button-container">
