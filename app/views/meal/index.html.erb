@@ -4,7 +4,7 @@
 <div class="form-group">
     <%= form.date_field :date, class: 'form-control', value: date %>
 </div>
-<%= form.submit 'Filter', class: 'btn btn-secondary' %>
+<%= form.submit 'Filter', class: 'btn btn-secondary', name: nil %>
 <% end %>
 <%= render "layouts/header" %>
 <div class="container">
@@ -61,6 +61,5 @@
         <% end %>
     </div>
     <%= render 'meal/add_meals', date: date, create_meal_path: create_meal_path %>
-
-    <%= render "layouts/footer" %>
 </div>
+<%= render "layouts/footer" %>

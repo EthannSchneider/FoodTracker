@@ -17,17 +17,14 @@ class MealController < ApplicationController
     meal.fat = params[:fat]
     meal.user = current_user
 
-    if meal.save
-      redirect_to root_path, notice: 'Meal has been created'
-    else
-      redirect_to root_path, alert: 'Meal could not be created'
-    end
+    meal.save
+    redirect_to action: :index, date: meal.date
   end
 
   def destroy
     meal = Meal.find(params[:id])
     meal.destroy
-    redirect_to root_path, notice: 'Meal has been deleted'
+    redirect_to action: :index, date: meal.date
   end
 
   def update
@@ -43,10 +40,7 @@ class MealController < ApplicationController
     meal.protein = params[:protein]
     meal.fat = params[:fat]
 
-    if meal.save
-      redirect_to root_path, notice: 'Meal has been updated'
-    else
-      redirect_to root_path, alert: 'Meal could not be updated'
-    end
+    meal.save
+    redirect_to action: :index, date: meal.date
   end
 end
