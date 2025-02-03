@@ -10,7 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_23_084346) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_30_092713) do
+  create_table "body_measurements", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.date "date", null: false
+    t.decimal "weight", null: false
+    t.decimal "body_fat_percentage"
+    t.decimal "waist_size"
+    t.decimal "chest_size"
+    t.decimal "hip_size"
+    t.decimal "left_arm_size"
+    t.decimal "right_arm_size"
+    t.decimal "left_forearm_size"
+    t.decimal "right_forearm_size"
+    t.decimal "right_thighs_size"
+    t.decimal "left_thighs_size"
+    t.decimal "right_calves_size"
+    t.decimal "left_calves_size"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "date"], name: "index_body_measurements_on_user_id_and_date", unique: true
+    t.index ["user_id"], name: "index_body_measurements_on_user_id"
+  end
+
   create_table "meals", force: :cascade do |t|
     t.string "name", null: false
     t.date "date", null: false
@@ -39,5 +61,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_23_084346) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "body_measurements", "users"
   add_foreign_key "meals", "users"
 end
