@@ -1,13 +1,13 @@
 <%= stylesheet_link_tag 'header', media: 'all' %>
 <header>
-    <div class="header-content">
+    <div class="header-content" id="header-content" onclick="document.getElementById('header-content').classList.toggle('show')">
         <div class="logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils h-8 w-8 text-indigo-600">
                 <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path>
                 <path d="M7 2v20"></path>
                 <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path>
             </svg>
-            <h1>Food Tracker</h1>
+            <h1 class="hide-mobile">Food Tracker</h1>
         </div>
 
         <div class="header-links">
@@ -19,5 +19,10 @@
             <%= @additionbutton %>
             <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
         </div>
+    </div>
+    <div class="burger-menu" onclick="document.getElementById('header-content').classList.toggle('show')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-8 w-8 text-indigo-600">
+            <path d="M3 12h18M3 6h18M3 18h18"></path>
+        </svg>
     </div>
 </header>

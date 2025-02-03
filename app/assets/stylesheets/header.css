@@ -11,6 +11,7 @@ header {
     max-width: 1300px;
     width: 100%;
     align-items: center;
+    background-color: #ffffff;
 }
 
 .logo {
@@ -45,6 +46,14 @@ header {
     .logo svg {
         color: #2592ff;
     }
+    .header-content {
+        background-color: #121212;
+    }
+}
+
+
+.burger-menu {
+    display: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -63,4 +72,55 @@ header {
         justify-content: space-around;
     }
     
+    .hide-mobile {
+        display: none;
+    }
+
+    .burger-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .burger-menu svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logo svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    header {
+        justify-content: flex-start;
+    }
+
+    .header-content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        display: none;
+    }
+
+    .header-content > div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header-content > div > a {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .show {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 }
