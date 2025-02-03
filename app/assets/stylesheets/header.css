@@ -31,6 +31,12 @@ header {
     align-items: center;
 }
 
+.header-links {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+
 @media (prefers-color-scheme: dark) {
     header {
         background-color: #121212;
@@ -39,4 +45,22 @@ header {
     .logo svg {
         color: #2592ff;
     }
+}
+
+@media screen and (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header-links {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .header-button-container {
+        width: 100%;
+        justify-content: space-around;
+    }
+    
 }

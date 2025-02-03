@@ -10,6 +10,11 @@
             <h1>Food Tracker</h1>
         </div>
 
+        <div class="header-links">
+            <%= link_to 'Meals', "/meal", class: 'header-link' %>
+            <%= link_to 'Body Measurements', "/body_measurement", class: 'header-link' %>
+        </div>
+
         <div class="header-button-container">
             <%= @additionbutton %>
             <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
