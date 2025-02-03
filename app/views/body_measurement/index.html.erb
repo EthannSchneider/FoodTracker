@@ -43,56 +43,58 @@
             <%= form_with url: url, method: method do |f| %>
             <%= f.hidden_field :date, value: body_measurement.date %>
             <div class="form-group">
-                <%= f.label :weight, 'Weight (kg)' %>
-                <%= f.number_field :weight, class: 'form-control', value: body_measurement.weight, required: true %>
-            </div>
-            <div class="form-group">
-                <%= f.label :body_fat_percentage, 'Body Fat (%)' %>
-                <%= f.number_field :body_fat_percentage, class: 'form-control', value: body_measurement.body_fat_percentage %>
-            </div>
-            <div class="form-group">
-                <%= f.label :waist_size, 'Waist Size (cm)' %>
-                <%= f.number_field :waist_size, class: 'form-control', value: body_measurement.waist_size %>
-            </div>
-            <div class="form-group">
-                <%= f.label :chest_size, 'Chest Size (cm)' %>
-                <%= f.number_field :chest_size, class: 'form-control', value: body_measurement.chest_size %>
-            </div>
-            <div class="form-group">
-                <%= f.label :hip_size, 'Hip Size (cm)' %>
-                <%= f.number_field :hip_size, class: 'form-control', value: body_measurement.hip_size %>
-            </div>
-            <div class="form-group">
-                <%= f.label :left_arm_size, 'Left Arm Size (cm)' %>
-                <%= f.number_field :left_arm_size, class: 'form-control', value: body_measurement.left_arm_size %>
-            </div>
-            <div class="form-group">
-                <%= f.label :right_arm_size, 'Right Arm Size (cm)' %>
-                <%= f.number_field :right_arm_size, class: 'form-control', value: body_measurement.right_arm_size %>
-            </div>
-            <div class="form-group">
-                <%= f.label :left_forearm_size, 'Left Forearm Size (cm)' %>
-                <%= f.number_field :left_forearm_size, class: 'form-control', value: body_measurement.left_forearm_size %>
-            </div>
-            <div class="form-group">
-                <%= f.label :right_forearm_size, 'Right Forearm Size (cm)' %>
-                <%= f.number_field :right_forearm_size, class: 'form-control', value: body_measurement.right_forearm_size %>
-            </div>
-            <div class="form-group">
-                <%= f.label :left_thighs_size, 'Left Thigh Size (cm)' %>
-                <%= f.number_field :left_thighs_size, class: 'form-control', value: body_measurement.left_thighs_size %>
-            </div>
-            <div class="form-group">
-                <%= f.label :right_thighs_size, 'Right Thigh Size (cm)' %>
-                <%= f.number_field :right_thighs_size, class: 'form-control', value: body_measurement.right_thighs_size %>
-            </div>
-            <div class="form-group">
-                <%= f.label :left_calves_size, 'Left Calf Size (cm)' %>
-                <%= f.number_field :left_calves_size, class: 'form-control', value: body_measurement.left_calves_size %>
-            </div>
-            <div class="form-group">
-                <%= f.label :right_calves_size, 'Right Calf Size (cm)' %>
-                <%= f.number_field :right_calves_size, class: 'form-control', value: body_measurement.right_calves_size %>
+                <div class="form-group">
+                    <%= f.label :weight, 'Weight (kg)' %>
+                    <%= f.number_field :weight, class: 'form-control', value: body_measurement.weight, required: true %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :body_fat_percentage, 'Body Fat (%)' %>
+                    <%= f.number_field :body_fat_percentage, class: 'form-control', value: body_measurement.body_fat_percentage %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :waist_size, 'Waist Size (cm)' %>
+                    <%= f.number_field :waist_size, class: 'form-control', value: body_measurement.waist_size %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :chest_size, 'Chest Size (cm)' %>
+                    <%= f.number_field :chest_size, class: 'form-control', value: body_measurement.chest_size %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :hip_size, 'Hip Size (cm)' %>
+                    <%= f.number_field :hip_size, class: 'form-control', value: body_measurement.hip_size %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :left_arm_size, 'Left Arm Size (cm)' %>
+                    <%= f.number_field :left_arm_size, class: 'form-control', value: body_measurement.left_arm_size %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :right_arm_size, 'Right Arm Size (cm)' %>
+                    <%= f.number_field :right_arm_size, class: 'form-control', value: body_measurement.right_arm_size %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :left_forearm_size, 'Left Forearm Size (cm)' %>
+                    <%= f.number_field :left_forearm_size, class: 'form-control', value: body_measurement.left_forearm_size %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :right_forearm_size, 'Right Forearm Size (cm)' %>
+                    <%= f.number_field :right_forearm_size, class: 'form-control', value: body_measurement.right_forearm_size %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :left_thighs_size, 'Left Thigh Size (cm)' %>
+                    <%= f.number_field :left_thighs_size, class: 'form-control', value: body_measurement.left_thighs_size %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :right_thighs_size, 'Right Thigh Size (cm)' %>
+                    <%= f.number_field :right_thighs_size, class: 'form-control', value: body_measurement.right_thighs_size %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :left_calves_size, 'Left Calf Size (cm)' %>
+                    <%= f.number_field :left_calves_size, class: 'form-control', value: body_measurement.left_calves_size %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :right_calves_size, 'Right Calf Size (cm)' %>
+                    <%= f.number_field :right_calves_size, class: 'form-control', value: body_measurement.right_calves_size %>
+                </div>
             </div>
             <div class="form-group">
                 <%= f.submit 'Update', class: 'btn btn-primary' %>
