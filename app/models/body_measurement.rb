@@ -10,4 +10,8 @@ class BodyMeasurement < ApplicationRecord
   def self.by_date_and_user(date, user)
     find_by(date: date, user: user)
   end
+
+  def self.latest_measurements(user)
+    where(user: user).order(date: :desc)
+  end
 end

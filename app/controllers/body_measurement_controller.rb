@@ -3,7 +3,8 @@ class BodyMeasurementController < ApplicationController
     date = params[:date] || Date.today
     body_measurement = BodyMeasurement.by_date_and_user(date, current_user)
     body_measurement ||= BodyMeasurement.new(date: date)
-    render "index", locals: { body_measurement: body_measurement, date: date, body_measurements_path: "/body_measurement" }
+    latest_measurements = BodyMeasurement.latest_measurements(current_user)
+    render "index", locals: { body_measurement: body_measurement, date: date, body_measurements_path: "/body_measurement", latest_measurements: latest_measurements }
   end
 
   def create

@@ -11,7 +11,7 @@
     <div class="daily-summary">
         <h2>Evolutions Graph</h2>
         <div class="daily-boxs">
-            graph
+            <%= line_chart latest_measurements.pluck(:date, :weight) %>
         </div>
     </div>
     <div class="title-container">
