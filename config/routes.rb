@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     root to: redirect('/meal'), as: :authenticated_root
 
     resources :meal
+    resources :body_measurement
   end
 
   unauthenticated do

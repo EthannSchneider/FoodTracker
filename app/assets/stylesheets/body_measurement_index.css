@@ -1,0 +1,15 @@
+.body_measurement {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 12px);
+    justify-content: space-between;
+    border-radius: 10px;
+    align-items: center;
+    padding: 5px;
+}
+
+.body_measurement > form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

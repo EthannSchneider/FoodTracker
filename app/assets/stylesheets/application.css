@@ -21,6 +21,7 @@ html, body {
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    text-align: center;
 }
 
 .btn-danger {
@@ -122,6 +123,10 @@ input {
     padding: 5px;
     border-radius: 4px;
     border: 1px solid #ccc;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* Dark mode styles */
