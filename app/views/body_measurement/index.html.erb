@@ -3,7 +3,9 @@
 <% @additionbutton = form_with url: body_measurements_path, method: :get, local: true, class: 'form-inline' do |form| %>
 <div class="form-group">
     <%= form.date_field :date, class: 'form-control', value: date %>
+    <% unless params[:graph_type].nil? %>
     <%= form.hidden_field :graph_type, value: params[:graph_type] %>
+    <% end %>
 </div>
 <%= form.submit 'Filter', class: 'btn btn-secondary', name: nil %>
 <% end %>
@@ -20,7 +22,9 @@
             <% end %>
         </div>
         <div class="daily-boxs">
-            <%= line_chart latest_measurements.pluck(:date, params[:graph_type] || :weight) %>
+            <% valid_graph_types = ['weight', 'body_fat_percentage', 'waist_size', 'chest_size', 'hip_size', 'left_arm_size', 'right_arm_size', 'left_forearm_size', 'right_forearm_size', 'left_thighs_size', 'right_thighs_size', 'left_calves_size', 'right_calves_size'] %>
+            <% graph_type = valid_graph_types.include?(params[:graph_type]) ? params[:graph_type] : 'weight' %>
+            <%= line_chart latest_measurements.pluck(:date, graph_type) %>
         </div>
     </div>
     <div class="title-container">

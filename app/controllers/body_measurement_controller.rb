@@ -32,7 +32,7 @@ class BodyMeasurementController < ApplicationController
   def update
     body_measurement = BodyMeasurement.find(params[:id])
     if body_measurement.user != current_user
-      redirect_to body_measurement, notice: 'You are not allowed to update this body measurement.'
+      redirect_to body_measurement, notice: "You are not allowed to update this body measurement."
     end
 
     body_measurement.weight = params[:weight]
@@ -48,7 +48,7 @@ class BodyMeasurementController < ApplicationController
     body_measurement.left_thighs_size = params[:left_thighs_size].presence || nil
     body_measurement.right_calves_size = params[:right_calves_size].presence || nil
     body_measurement.left_calves_size = params[:left_calves_size].presence || nil
-  
+
     body_measurement.save
     redirect_to action: :index, date: body_measurement.date
   end
