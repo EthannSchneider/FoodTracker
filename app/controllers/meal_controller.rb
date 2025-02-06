@@ -15,6 +15,7 @@ class MealController < ApplicationController
     meal.carbs = params[:carbs]
     meal.protein = params[:protein]
     meal.fat = params[:fat]
+    meal.picture = params[:picture]
     meal.user = current_user
 
     meal.save
@@ -30,7 +31,7 @@ class MealController < ApplicationController
   def update
     meal = Meal.find(params[:id])
     if meal.user != current_user
-      redirect_to root_path, alert: 'You are not authorized to update this meal'
+      redirect_to root_path, alert: "You are not authorized to update this meal"
       return
     end
     meal.name = params[:name]
@@ -39,7 +40,9 @@ class MealController < ApplicationController
     meal.carbs = params[:carbs]
     meal.protein = params[:protein]
     meal.fat = params[:fat]
-
+    if params[:picture].present?
+      meal.picture = params[:picture]
+    end
     meal.save
     redirect_to action: :index, date: meal.date
   end

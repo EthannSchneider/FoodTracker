@@ -1,156 +1,163 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  min-height: 100vh;
 }
 
 .title-container {
-    display: flex;
-    width: 100%;
-    max-width: 1300px;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
+  display: flex;
+  width: 100%;
+  max-width: 1300px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .meal-buttons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .meals-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    min-height: 50vh;
-    width: 100%;
-    max-width: 1300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  min-height: 50vh;
+  width: 100%;
+  max-width: 1300px;
 }
 
 .daily-summary {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    max-width: 1300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 1300px;
 }
 
 .daily-boxs {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
 }
 
 .daily-box {
-    width: calc(25% - 10px);
-    height: 100px;
-    padding: 10px;
-    border-radius: 10px;
+  width: calc(25% - 10px);
+  height: 100px;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .daily-box > p {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .daily-box > h3 {
-    font-size: 14px;
-    color: gray;
+  font-size: 14px;
+  color: gray;
 }
 
 .daily-calories {
-    background-color: rgba(188, 204, 255, 0.5);
-    color: rgb(0, 0, 179);
+  background-color: rgba(188, 204, 255, 0.5);
+  color: rgb(0, 0, 179);
 }
 
 .daily-protein {
-    background-color: rgba(188, 255, 195, 0.5);
-    color: rgb(0, 179, 0);
+  background-color: rgba(188, 255, 195, 0.5);
+  color: rgb(0, 179, 0);
 }
 
 .daily-fat {
-    background-color: rgba(255, 151, 151, 0.5);
-    color: rgb(201, 0, 0);
+  background-color: rgba(255, 151, 151, 0.5);
+  color: rgb(201, 0, 0);
 }
 
 .daily-carbs {
-    background-color: rgba(251, 255, 167, 0.5);
-    color: rgb(141, 148, 0);
+  background-color: rgba(251, 255, 167, 0.5);
+  color: rgb(141, 148, 0);
 }
 
 .meal {
-    display: flex;
-    width: calc(100% - 12px);
-    border: 1px solid #ccc;
-    justify-content: space-between;
-    border-radius: 10px;
-    align-items: center;
-    padding: 5px;
+  display: flex;
+  width: calc(100% - 12px);
+  border: 1px solid #ccc;
+  justify-content: space-between;
+  border-radius: 10px;
+  align-items: center;
+  padding: 5px;
 }
 
 .meal-title p {
-   font-size: 12px;
+  font-size: 12px;
 }
 
 .meal-title h3 {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .meal-info-buttons {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .meal-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
 }
 
 .meal-buttons > input {
-    width: 80px;
+  width: 80px;
 }
 
 .cpfc-input {
-    width: 50px;
-    padding: 0px;
-    margin: 0px;
+  width: 50px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .nt-input {
-    width: 150px;
-    margin: 0px;
+  width: 150px;
+  margin: 0px;
+}
+
+.meal-picture img {
+  width: 100px;
+  height: auto;
+  max-height: 150px;
+  border-radius: 10px;
 }
 
 @media (prefers-color-scheme: dark) {
-    .daily-box > h3 {
-        color: gray;
-    }
-    .daily-calories {
-        background-color: rgba(188, 204, 255, 1);
-        color: rgb(0, 0, 161);
-    }
-    
-    .daily-protein {
-        background-color: rgba(188, 255, 195, 1);
-        color: rgb(0, 130, 0);
-    }
-    
-    .daily-fat {
-        background-color: rgba(255, 151, 151, 1);
-        color: rgb(175, 0, 0);
-    }
-    
-    .daily-carbs {
-        background-color: rgba(251, 255, 167, 1);
-        color: rgb(122, 129, 0);
-    }    
+  .daily-box > h3 {
+    color: gray;
+  }
+  .daily-calories {
+    background-color: rgba(188, 204, 255, 1);
+    color: rgb(0, 0, 161);
+  }
+
+  .daily-protein {
+    background-color: rgba(188, 255, 195, 1);
+    color: rgb(0, 130, 0);
+  }
+
+  .daily-fat {
+    background-color: rgba(255, 151, 151, 1);
+    color: rgb(175, 0, 0);
+  }
+
+  .daily-carbs {
+    background-color: rgba(251, 255, 167, 1);
+    color: rgb(122, 129, 0);
+  }
 }

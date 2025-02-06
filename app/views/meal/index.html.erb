@@ -39,6 +39,14 @@
         <% end %>
         <% meals.each do |meal| %>
         <%= form_with url: meal_path(meal), method: :put, local: true, class: 'meal' do |f| %>
+        <div class="meal-picture">
+            <% if meal.picture.present? %>
+            <img src="<%= url_for(meal.picture) %>" alt="<%= meal.name %>" onclick="document.getElementById('meal-picture-<%= meal.id %>').click();">
+            <% else %>
+            <img src="https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg" alt="Default Image" onclick="document.getElementById('meal-picture-<%= meal.id %>').click();">
+            <% end %>
+            <%= f.file_field :picture, id: "meal-picture-#{meal.id}", style: 'display: none;', accept: 'image/png, image/jpeg' %>
+        </div>
         <div class="meal-title">
             <h3><%= f.text_field :name, value: meal.name, class: 'form-control nt-input' %></h3>
             <p><%= f.select :meal_type, options_for_select([['Breakfast', 0], ['Lunch', 1], ['Dinner', 2], ['Snack', 3]], meal.meal_type), {}, class: 'form-control nt-input' %></p>
