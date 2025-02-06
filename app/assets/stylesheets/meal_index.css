@@ -131,9 +131,9 @@
 }
 
 .meal-picture img {
-  width: 100px;
+  width: 200px;
   height: auto;
-  max-height: 150px;
+  max-height: 250px;
   border-radius: 10px;
 }
 
@@ -159,5 +159,24 @@
   .daily-carbs {
     background-color: rgba(251, 255, 167, 1);
     color: rgb(122, 129, 0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .meal {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .meal-info input {
+    padding: 10px;
+  }
+  .daily-boxs {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .daily-box {
+    width: 50%;
+    text-align: center;
   }
 }
