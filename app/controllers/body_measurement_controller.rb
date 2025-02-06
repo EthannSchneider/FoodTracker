@@ -23,6 +23,7 @@ class BodyMeasurementController < ApplicationController
     body_measurement.left_thighs_size = params[:left_thighs_size]
     body_measurement.right_calves_size = params[:right_calves_size]
     body_measurement.left_calves_size = params[:left_calves_size]
+    body_measurement.picture = params[:picture]
     body_measurement.user = current_user
 
     body_measurement.save
@@ -48,6 +49,9 @@ class BodyMeasurementController < ApplicationController
     body_measurement.left_thighs_size = params[:left_thighs_size].presence || nil
     body_measurement.right_calves_size = params[:right_calves_size].presence || nil
     body_measurement.left_calves_size = params[:left_calves_size].presence || nil
+    if params[:picture].present?
+      body_measurement.picture = params[:picture]
+    end
 
     body_measurement.save
     redirect_to action: :index, date: body_measurement.date

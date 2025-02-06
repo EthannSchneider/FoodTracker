@@ -11,6 +11,12 @@
 <% end %>
 <%= render "layouts/header" %>
 <div class="container">
+    <% if body_measurement.picture.attached? %>
+    <div class="today-picture">
+        <h2>Today's Picture</h2>
+        <%= image_tag body_measurement.picture %>
+    </div>
+    <% end %>
     <div class="daily-summary">
         <h2>Evolutions Graph</h2>
         <div class="form-group">
@@ -98,6 +104,10 @@
                 <div class="form-group">
                     <%= f.label :right_calves_size, 'Right Calf Size (cm)' %>
                     <%= f.number_field :right_calves_size, class: 'form-control', value: body_measurement.right_calves_size %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :picture, 'Upload Picture' %>
+                    <%= f.file_field :picture, class: 'form-control' %>
                 </div>
             </div>
             <div class="form-group">
