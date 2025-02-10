@@ -16,7 +16,7 @@ class CreateBodyMeasurement < ActiveRecord::Migration[8.0]
       t.decimal :left_thighs_size
       t.decimal :right_calves_size
       t.decimal :left_calves_size
-      t.index [:user_id, :date], unique: true
+      t.index [ :user_id, :date ], unique: true
 
       t.timestamps
     end

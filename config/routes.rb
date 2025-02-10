@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => {:registrations => "users/registrations"}
+  devise_for :users, controllers: { registrations: "users/registrations" }
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -13,15 +13,15 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   authenticated :user do
-    root to: redirect('/meal'), as: :authenticated_root
+    root to: redirect("/meal"), as: :authenticated_root
 
     resources :meal
     resources :body_measurement
   end
 
   unauthenticated do
-    root to: redirect('/users/sign_in')
+    root to: redirect("/users/sign_in")
 
-    get '/meal', to: redirect('/users/sign_in')
+    get "/meal", to: redirect("/users/sign_in")
   end
 end

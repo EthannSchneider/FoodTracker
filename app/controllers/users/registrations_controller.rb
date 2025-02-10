@@ -6,8 +6,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :update_sanitized_params
 
   def update_sanitized_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:firstname, :lastname, :email, :password, :password_confirmation])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:firstname, :lastname, :email, :password, :password_confirmation, :current_password])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [ :firstname, :lastname, :email, :password, :password_confirmation ])
+    devise_parameter_sanitizer.permit(:account_update, keys: [ :firstname, :lastname, :email, :password, :password_confirmation, :current_password ])
   end
 
   # GET /resource/sign_up
