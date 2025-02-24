@@ -1,8 +1,10 @@
 # frozen_string_literal: true
+require_relative "../migration_helper.rb"
 
 class DeviseCreateUsers < ActiveRecord::Migration[8.0]
   def change
-    create_table :users do |t|
+    primary_key_type, _foreign_key_type = primary_and_foreign_key_types
+    create_table :users, id: primary_key_type do |t|
       ## Database authenticatable
       t.string :firstname,          null: false, default: ""
       t.string :lastname,           null: false, default: ""
