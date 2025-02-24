@@ -25,17 +25,33 @@ test:
 # is mounted as a persistent Docker volume in config/deploy.yml.
 production:
   primary:
-    <<: *default
-    database: storage/production.sqlite3
+    adapter: mysql2
+    encoding: utf8
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    database: <%= ENV['DATABASE_NAME'] %>
+    username: <%= ENV['DATABASE_USERNAME'] %>
+    password: <%= ENV['DATABASE_PASSWORD'] %>
+    host: <%= ENV['DATABASE_HOST'] %>
+    port: <%= ENV['DATABASE_PORT'] %>
+    schema_dump: false
   cache:
-    <<: *default
-    database: storage/production_cache.sqlite3
+    adapter: sqlite3
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    database: storage/cache.sqlite3
+    timeout: 5000
     migrations_paths: db/cache_migrate
+    schema_dump: false
   queue:
-    <<: *default
-    database: storage/production_queue.sqlite3
+    adapter: sqlite3
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    database: storage/queue.sqlite3
+    timeout: 5000
     migrations_paths: db/queue_migrate
+    schema_dump: false
   cable:
-    <<: *default
-    database: storage/production_cable.sqlite3
+    adapter: sqlite3
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    database: storage/cable.sqlite3
+    timeout: 5000
     migrations_paths: db/cable_migrate
+    schema_dump: false

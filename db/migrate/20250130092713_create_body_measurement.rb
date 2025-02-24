@@ -1,7 +1,12 @@
+require_relative "../migration_helper.rb"
+
 class CreateBodyMeasurement < ActiveRecord::Migration[8.0]
   def change
-    create_table :body_measurements do |t|
-      t.references :user, null: false, foreign_key: true
+    # Use Active Record's configured type for primary and foreign keys
+    primary_key_type, foreign_key_type = primary_and_foreign_key_types
+
+    create_table :body_measurements, id: primary_key_type do |t|
+      t.references :user, type: foreign_key_type, null: false, foreign_key: true
       t.date :date, null: false
       t.decimal :weight, null: false
       t.decimal :body_fat_percentage

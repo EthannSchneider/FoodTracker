@@ -3,7 +3,7 @@
 ### Prerequisites
 You will need the following things properly installed on your computer.
 * [Ruby 3.4.1](https://www.ruby-lang.org/en/downloads/)
-* [Rails 5.2.3](https://rubyonrails.org/)
+* [Rails 8.0.1](https://rubyonrails.org/)
 
 ### Running / Development
 * `git clone <repository-url>` this repository

@@ -1,3 +1,5 @@
+require_relative "../migration_helper.rb"
+
 # This migration comes from active_storage (originally 20170806125915)
 class CreateActiveStorageTables < ActiveRecord::Migration[7.0]
   def change
@@ -45,13 +47,4 @@ class CreateActiveStorageTables < ActiveRecord::Migration[7.0]
       t.foreign_key :active_storage_blobs, column: :blob_id
     end
   end
-
-  private
-    def primary_and_foreign_key_types
-      config = Rails.configuration.generators
-      setting = config.options[config.orm][:primary_key_type]
-      primary_key_type = setting || :primary_key
-      foreign_key_type = setting || :bigint
-      [ primary_key_type, foreign_key_type ]
-    end
 end
