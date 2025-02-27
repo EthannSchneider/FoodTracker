@@ -39,19 +39,13 @@ production:
     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
     database: storage/cache.sqlite3
     timeout: 5000
-    migrations_paths: db/cache_migrate
-    schema_dump: false
   queue:
     adapter: sqlite3
     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
     database: storage/queue.sqlite3
     timeout: 5000
-    migrations_paths: db/queue_migrate
-    schema_dump: false
   cable:
     adapter: sqlite3
     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
     database: storage/cable.sqlite3
     timeout: 5000
-    migrations_paths: db/cable_migrate
-    schema_dump: false
