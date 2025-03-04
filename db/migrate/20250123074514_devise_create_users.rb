@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative "../migration_helper.rb"
 
 class DeviseCreateUsers < ActiveRecord::Migration[8.0]
